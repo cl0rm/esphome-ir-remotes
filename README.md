@@ -10,3 +10,6 @@
  - YAMAHA CDC CD Players/changers (that's really why this exists - Hard to find the codes)
     - CDC-845
     - CDC-675
+ - Technics RAK-SA723 System Remote
+   - Works with most old Technics Tape Decks (RS-TRxxx)
+   - Should also work with many old Technics Home Theater Amplifiers (1990s era. Dolby pro logic I/II stuff)
