@@ -1,0 +1,335 @@
+esphome:
+  name: ir-blaster-pana
+  friendly_name: IR Blaster - Panasonic Plasma
+
+esp8266:
+  board: d1
+
+# Example configuration entry
+remote_transmitter:
+  pin: 15
+  carrier_duty_percent: 50%
+
+# Individual buttons
+button:
+  # Buttons for TV
+  - platform: template
+    name: "TV On_Off"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x100BCBD
+        # Long Press is needed for power relay to "latch". Always liked this feature of pana Plasmas
+        repeat:
+          times: 15
+          wait_time: 100ms
+  - platform: template
+    name: "TV Mute"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x1004C4D
+  - platform: template
+    name: "TV Vol_Plus"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x1000405
+  - platform: template
+    name: "TV Vol_Minus"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x1008485
+  - platform: template
+    name: "TV P_Plus"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x1002C2D
+  - platform: template
+    name: "TV P_Minus"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x100ACAD
+  - platform: template
+    name: "TV Left"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x1007273
+  - platform: template
+    name: "TV Right"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x100F2F3
+  - platform: template
+    name: "TV Up"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x1005253
+  - platform: template
+    name: "TV Down"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x100D2D3
+  - platform: template
+    name: "TV Ok"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x1009293
+  - platform: template
+    name: "TV Menu"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x1004A4B
+  - platform: template
+    name: "TV Red"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x1000E0F
+  - platform: template
+    name: "TV Yellow"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x1004E4F
+  - platform: template
+    name: "TV Green"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x1008E8F
+  - platform: template
+    name: "TV Blue"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x100CECF
+  - platform: template
+    name: "TV Last_View"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x100ECED
+  - platform: template
+    name: "TV My_App"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x1206D4C
+  - platform: template
+    name: "TV Netflix"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x1904FDE
+  - platform: template
+    name: "TV Apps"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x190F160
+  - platform: template
+    name: "TV Play"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x1900392
+  - platform: template
+    name: "TV Pause"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x1908312
+  - platform: template
+    name: "TV Stop"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x19043D2
+  - platform: template
+    name: "TV Forward"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x190C352
+  - platform: template
+    name: "TV Back"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x19023B2
+  - platform: template
+    name: "TV Key1"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x1000809
+  - platform: template
+    name: "TV Key2"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x1008889
+  - platform: template
+    name: "TV Key3"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x1004849
+  - platform: template
+    name: "TV Key4"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x100C8C9
+  - platform: template
+    name: "TV Key5"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x1002829
+  - platform: template
+    name: "TV Key6"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x100A8A9
+  - platform: template
+    name: "TV Key7"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x1006869
+  - platform: template
+    name: "TV Key8"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x100E8E9
+  - platform: template
+    name: "TV Key9"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x1001819
+  - platform: template
+    name: "TV Key0"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x1009899
+  - platform: template
+    name: "TV Title_Fwd"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x190BB2A
+  - platform: template
+    name: "TV Title_Back"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x1903BAA
+  - platform: template
+    name: "TV Record"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x190A332
+  - platform: template
+    name: "TV Guide"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x190E170
+  - platform: template
+    name: "TV Exit"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x100CBCA
+  - platform: template
+    name: "TV Back"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x1002B2A
+  - platform: template
+    name: "TV Option"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x190E574
+  - platform: template
+    name: "TV Info"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x1009C9D
+  - platform: template
+    name: "TV Tv"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x1400C4D
+  - platform: template
+    name: "TV Av"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x100A0A1
+  - platform: template
+    name: "TV Text"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x180C041
+  - platform: template
+    name: "TV Sttl"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x180A021
+  - platform: template
+    name: "TV Picture"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x1000A0B
+  - platform: template
+    name: "TV Help"
+    on_press:
+      remote_transmitter.transmit_panasonic:
+        address: 0x4004
+        command: 0x1003534
+
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "CHANGE_ME"
+
+ota:
+
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "CHANGE_ME"
+    password: "CHANGE_ME"
+
+captive_portal:
+    
